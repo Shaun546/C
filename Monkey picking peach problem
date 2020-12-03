@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int Peach()
+{
+	int n = 9;
+	int sum = 1;//第十天的桃子数
+	while (n != 0)
+	{
+		
+		sum = (sum + 1) * 2;
+		n--;
+	}
+	return sum;
+}
+
+int main()
+{
+
+	printf("第一次共摘%d个桃子\n", Peach());
+	
+	return 0;
+}
