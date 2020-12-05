@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main()
+{
+	int a = 1;
+	int b = 5;
+	int c = 10;
+	int sum = 15;
+	int count = 0;
+	for (int i = 0; i <= 15; i++)
+	{
+		for (int j = 0; j <= 3; j++)
+		{
+			for (int k = 0; k <= 1; k++)
+			{
+				if (sum == a * i + b * j + c * k)
+				{
+					count++;
+					
+					printf("1元:%d  5元:%d  10元:%d\n", i, j, k);
+				}
+				
+			}
+
+		}
+
+	}
+	printf("有%d种方法\n",count);
+
+	return 0;
+}
