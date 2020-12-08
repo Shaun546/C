@@ -1,0 +1,62 @@
+//第一种方法调用函数
+#include <stdio.h>
+void PreSum(int nums[], int numsSize)
+{
+	
+	int rtSum[100] = {0};
+	int i = 0;
+	rtSum[0] = nums[0];
+	for (i = 1; i < numsSize; i++)
+	{
+		rtSum[i] = rtSum[i - 1] + nums[i];
+		
+	}
+	for (i = 0; i < numsSize; i++)
+	{
+		printf("%d ", rtSum[i]);
+	}
+}
+
+int main()
+{
+	int nums[100] = { 0};
+	int length = 0;
+	printf("输入这组数的个数，然后依次输入这组数：\n");
+	scanf("%d", &length);
+
+	for (int i = 0; i < length; i++)
+	{
+		scanf("%d", &nums[i]);
+	
+	}
+	PreSum(nums, length);//调用PreSum函数同时传递参数
+	
+	return 0;
+}
+//第二种方法
+#include<stdio.h>
+int main()
+{
+	int nums[100] = {0};
+	int rtSum[100] = {0};
+	int i = 0;//我的错误1：i未初始化
+	int length = 0;
+	printf("输入这组数的个数，然后依次输入这组数：\n");
+	scanf("%d", &length);//我的错误2：scanf函数中出现\n
+	
+	for (i = 0; i < length; i++)
+	{
+		scanf("%d", &nums[i]);
+		if (i == 0)//我的错误3：等号写成赋值
+		{
+			rtSum[0] = nums[0];
+		}
+       
+		else
+		{
+			rtSum[i] = rtSum[i - 1] + nums[i];
+		}
+		printf("%d ", rtSum[i]);
+	}
+	return 0;
+}
