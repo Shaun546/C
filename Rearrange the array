@@ -1,0 +1,28 @@
+#include <stdio.h>
+void Sort(int *nums, int numSize)
+{
+	int i, j, n;
+	n = numSize / 2;
+	printf("%d\n", n);
+	
+	int reSum[100] = { 0 };
+	int k = 0;//reSum下标
+	for (i = 0, j = n; i < n; i++, j++)
+	{
+		reSum[k++] = nums[i];
+		reSum[k++] = nums[j];
+		
+	}
+	for (k = 0; k < numSize; k++)
+	{
+		printf("%d ", reSum[k]);
+	}
+}
+
+int main()
+{
+	int nums[] = { 2, 5, 1, 3, 4, 7 };
+	Sort(nums, sizeof(nums) / sizeof(nums[0]));
+
+	return 0;
+}
