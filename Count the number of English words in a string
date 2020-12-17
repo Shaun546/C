@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <assert.h>
+
+int Words(const char* str)
+{
+	assert(str != NULL);
+	if (str == NULL)
+	{
+		return 0;
+	}
+	int count = 0;
+	while (*str != '\0')
+	{
+		if (isalpha(*str) && !isalpha(*(str + 1)))
+		{
+			count++;
+		}
+		str++;
+	}
+	return count;
+}
+int main()
+{
+	char arr[] = "adf ert 5678adad,wrt.asdf";
+	Words(arr);
+	printf("%d \n", Words(arr));
+
+	return 0;
+}
